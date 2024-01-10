@@ -10,11 +10,12 @@ set :puma_threads, [4, 16]
 set :puma_workers, 0
 
 set :user, 'deployer'
+set :password, 'kwOojQ5B1PZnY3DOCkn7XW1V'
 set :pty, true
 #set :use_sudo, false
 set :stage, :production
 set :deploy_via, :remote_cache
-set :deploy_to, "/home/deployer/#{fetch :application}"
+set :deploy_to, "/home/#{fetch(:user)}/#{fetch :application}"
 set :puma_bind, "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"
 set :puma_pid, "#{shared_path}/tmp/pids/puma.pid"
