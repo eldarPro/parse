@@ -9,6 +9,7 @@ set :branch, "main"
 set :puma_threads, [4, 16]
 set :puma_workers, 0
 
+set :user, 'deployer'
 set :pty, true
 #set :use_sudo, false
 set :stage, :production
