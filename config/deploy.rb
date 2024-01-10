@@ -2,7 +2,12 @@
 lock "~> 3.18.0"
 
 set :application, "parse"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :repo_url, "git@github.com:eldarPro/parse.git"
+set :branch, "main"
+set :deploy_to, "/home/deployer/#{fetch :application}"
+
+set :rbenv_prefix, '/usr/bin/rbenv exec' # Cf issue: https://github.com/capistrano/rbenv/issues/96
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
