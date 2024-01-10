@@ -59,6 +59,7 @@ group :development do
 
   # ----- DEPLOY -------
   gem "capistrano", "~> 3.18", require: false
+  gem 'capistrano-bundler', "~> 2.1", require: false
   gem "capistrano-rails", "~> 1.6", require: false
   gem 'capistrano-passenger', "~> 0.2", require: false
   gem 'capistrano-rbenv', "~> 2.2", require: false
