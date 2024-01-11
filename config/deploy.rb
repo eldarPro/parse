@@ -12,7 +12,7 @@ set :puma_workers, 4
 set :user, 'deployer'
 set :pty, true
 set :use_sudo, true
-set :sudo_user, "deployer".
+set :sudo_user, "deployer"
 set :stage, :production
 set :deploy_via, :remote_cache
 set :deploy_to, "/home/#{fetch(:user)}/#{fetch :application}"
