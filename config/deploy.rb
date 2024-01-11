@@ -33,13 +33,13 @@ set :rbenv_roles, :all
 append :linked_files, "config/master.key"
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
-namespace :greetings do
-  on roles(:app) do
-    execute '------------------ Успешный деплой ---------------------------'     
-  end
-end
+# namespace :greetings do
+#   on roles(:app) do
+#     execute '------------------ Успешный деплой ---------------------------'     
+#   end
+# end
 
-after :deploy, 'greetings:hello' 
+# after :deploy, 'greetings:hello' 
 
 
 # Default branch is :master
