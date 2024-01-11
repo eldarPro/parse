@@ -6,12 +6,12 @@ set :repo_url, "git@github.com:eldarPro/parse.git"
 set :branch, "main"
 
 
-set :puma_threads, [4, 16]
-set :puma_workers, 0
+set :puma_threads, [1, 6]
+set :puma_workers, 4
 
 set :user, 'deployer'
 set :pty, true
-set :use_sudo, false
+set :use_sudo, true
 set :stage, :production
 set :deploy_via, :remote_cache
 set :deploy_to, "/home/#{fetch(:user)}/#{fetch :application}"
