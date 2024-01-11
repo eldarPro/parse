@@ -33,6 +33,9 @@ set :rbenv_roles, :all
 append :linked_files, "config/master.key"
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
+after :deploy, '------------------ Успешный деплой ---------------------------'
+
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
