@@ -55,7 +55,7 @@ namespace :deploy do
   end
 end
 
-after 'deploy:publishing', 'deploy:create_database'
+# after 'deploy:publishing', 'deploy:create_database'
 
 
 # Default branch is :master
