@@ -5,7 +5,6 @@ set :application, "parse"
 set :repo_url, "git@github.com:eldarPro/parse.git"
 set :branch, "main"
 
-
 set :puma_threads, [1, 6]
 set :puma_workers, 4
 
