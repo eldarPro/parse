@@ -41,6 +41,21 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 
 # after :deploy, 'greetings:hello' 
 
+namespace :deploy do
+  desc 'Create database'
+  task :create_database do
+    on roles(:app) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, 'db:create'
+        end
+      end
+    end
+  end
+end
+
+after 'deploy:publishing', 'deploy:create_database'
+
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
