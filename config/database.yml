@@ -21,6 +21,8 @@ production:
   database: parse_test_db
   username: deployer
   password: parse_channels000777
+  host: localhost
+  port: 6432
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

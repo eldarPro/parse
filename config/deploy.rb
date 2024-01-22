@@ -42,12 +42,13 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 # after :deploy, 'greetings:hello' 
 
 namespace :deploy do
-  desc 'Create database'
+  desc 'Create database and run migrations'
   task :create_database do
     on roles(:app) do
       within release_path do
         with rails_env: fetch(:rails_env) do
           execute :rake, 'db:create'
+          execute :rake, 'db:migrate'
         end
       end
     end
